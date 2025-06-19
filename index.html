@@ -6,40 +6,127 @@
   <title>Our 100 Days – To My Love, Dong Geun</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family:'Quicksand'; background:linear-gradient(to bottom,#ffe4ec,#fff0f5); overflow:hidden; }
-    .container { max-width:700px;margin:100px auto;padding:20px;background:white;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,0.1);text-align:center;position:relative;overflow:hidden; }
-    h1 { font-size:2.5em;color:#ff5b99; }
-    .counter { font-size:1.2em;color:#666;margin:20px 0; }
-    .letter { text-align:left; white-space:pre-wrap; background:#fff9fc; padding:20px; border-radius:15px; box-shadow: inset 0 0 10px #ffe6f0; }
-    .audio-btn { margin:20px 0; }
-    .card-overlay { position:fixed;top:0;left:0;width:100%;height:100%;background:#ffdeec;display:flex;justify-content:center;align-items:center;z-index:999;flex-direction:column;transition:opacity 1s ease; }
-    .card-overlay h2 { font-size:2em;color:#ff4d88;margin-bottom:20px; }
-    .card-overlay button { padding:10px 20px;font-size:1em;background:#ff6fa5;color:white;border:none;border-radius:10px;cursor:pointer;transition:background 0.3s; }
-    .card-overlay button:hover { background:#ff5b99; }
-    .sparkle { position:absolute; width:10px; height:10px; background:rgba(255,75,150,0.8); border-radius:50%; animation:float 5s infinite ease-in; mix-blend-mode:screen; }
+    body {
+  margin: 0;
+  font-family: 'Quicksand';
+  background: url(us.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: auto; /* ✅ enables vertical scrolling */
+}
+    .container {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff5b99;
+    }
+    .counter {
+      font-size: 1.2em;
+      color: #666;
+      margin: 20px 0;
+    }
+    .letter {
+      text-align: left;
+      white-space: pre-wrap;
+      background: #fff9fc;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 10px #ffe6f0;
+    }
+    .audio-btn {
+      margin: 20px 0;
+    }
+    .card-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #ffdeec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+      transition: opacity 1s ease;
+    }
+    .card-overlay h2 {
+      font-size: 2em;
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+    .card-overlay button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #ff6fa5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .card-overlay button:hover {
+      background: #ff5b99;
+    }
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255,75,150,0.8);
+      border-radius: 50%;
+      animation: float 5s infinite ease-in;
+      mix-blend-mode: screen;
+    }
     @keyframes float {
-      0% { opacity:1; transform:translate(0,0) scale(1); }
-      100% { opacity:0; transform:translate(0,-400px) scale(2); }
+      0% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(0, -400px) scale(2); }
+    }
+    .youtube-player {
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
+
 <div class="card-overlay" id="overlay">
   <h2>Click to open the card 💌</h2>
   <button onclick="openCard()">Open</button>
 </div>
-<div class="container" id="card" style="display:none;">
+
+<div class="container" id="card" style="display: none;">
   <h1>Our 100 Days 💖</h1>
- 
+
+  <!-- 🎵 Visible YouTube Player -->
+  <div class="youtube-player" id="youtubeContainer" style="display:none;">
+    <iframe id="ytplayer" width="560" height="315"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+<h2 style="text-align:center; color:#ad5d77;">Listen this first</h2>
+  <!-- 🎤 Voice message -->
   <div class="audio-btn">
     <audio controls>
       <source src="voice-message.mp3" type="audio/mp3">
-          </audio>
+    </audio>
   </div>
 
+  <!-- 💌 Letter -->
   <article class="Our 100 days" style="flex:1; line-height:1.6; font-size:1rem; overflow-y:auto; max-height:500px; padding-left:15px; direction: ltr;">
     <h2 style="text-align:center; color:#ad5d77;">You're everything to me</h2>
-    <p>안녕 자기야,</p>
+      <p>안녕 자기야,</p>
     <p>오늘은 우리가 함께한 지 100일 되는 날이야. 사람들은 그냥 숫자에 불과하다, 그냥 날짜일 뿐이라고 할지 몰라. 하지만 나한테는 그 이상이야. 우리가 걸어온 길, 하루하루, 마음과 마음이 닿은 그 시간을 되새기는 소중한 이정표야. 난 100일을 이렇게 특별하게 축하해 본 적이 없어서, 너와 함께라서 더 의미 있어. 너는 나에게 많은 ‘처음’이었고, 이 순간을 진심과 사랑으로 가득 채우고 싶어.</p>
     <p>내가 글을 길게 쓸 거라는 건 아마도 당연한 일이겠지? 나는 항상 그래왔고 앞으로도 그럴 것 같아. 아마도 이게 멀리 있어도 너의 손을 잡는 내 방식인 것 같아. 내가 쓰는 모든 단어는 너에게 닿고 싶고, 내 안에 담긴 모든 감정을 너에게 전하고 싶은 마음이야. 비록 우리가 이 ‘공식적인’ 날 이전부터 함께였지만, 이렇게 제대로 축하하는 게 좋아. 너를 조금 더 크게, 조금 더 깊게 사랑할 기회니까. 그래서… 100일 축하해, 내 사랑.</p>
     <p>지금 네 곁에 있다면, 너를 놀라게 하고 사랑 받고, 소중하게 느끼게 해주기 위해 뭐든 다 했을 거야. 아마도 귀엽고 살짝 유치한 이벤트를 준비했을 거야, 너가 행복할 때 어린아이처럼 웃는 모습이 너무 좋아서. 아마 늦은 밤 산책도 하고, 내가 요리도 해주고, 그냥 옆에 앉아 꼭 안아주면서 너에게 네가 얼마나 소중한지 계속 말해줬을 거야.</p>
@@ -56,44 +143,40 @@
     <p>100일 축하해, 내 사랑.<br>나는 절대 네 곁을 떠나지 않을게.</p>
   </article>
 </section>
-  </div>
 </div>
-
-<audio id="bg-music" src="blue-by-youngk.mp3" autoplay loop muted></audio>
 
 <script>
   function openCard() {
     document.getElementById("overlay").style.opacity = 0;
-    setTimeout(() => { overlay.style.display='none'; card.style.display='block'; startSparkles(); }, 1000);
+    setTimeout(() => {
+      document.getElementById("overlay").style.display = 'none';
+      document.getElementById("card").style.display = 'block';
+      document.getElementById("youtubeContainer").style.display = 'block';
+      startSparkles();
+    }, 1000);
     playMusic();
   }
 
   function calculateDays() {
-    const start=new Date('2025-03-13');
-    const diff=Math.floor((new Date() - start)/(1000*60*60*24));
-    document.getElementById("daysTogether").textContent=diff;
+    const start = new Date('2025-03-13');
+    const diff = Math.floor((new Date() - start) / (1000 * 60 * 60 * 24));
+    document.getElementById("daysTogether").textContent = diff;
   }
   calculateDays();
 
-  let bgAudio;
   function playMusic() {
-    if (!bgAudio) {
-      bgAudio = document.createElement('audio');
-      bgAudio.src = 'Blue-YoungK.mp3'; // Replace with actual file on host
-      bgAudio.loop = true;
-      bgAudio.volume = 5;
-      bgAudio.play().catch(_=>console.log('Play blocked, tap to enable'));
-    }
+    const ytPlayer = document.getElementById("ytplayer");
+    ytPlayer.src = "https://www.youtube.com/embed/X77EbeNyQhY?autoplay=1&loop=1&playlist=X77EbeNyQhY";
   }
 
   function startSparkles() {
-    const container=document.getElementById('card');
-    for (let i=0; i<30; i++){
+    const container = document.getElementById('card');
+    for (let i = 0; i < 30; i++) {
       const s = document.createElement('div');
-      s.className='sparkle';
-      s.style.left=Math.random()*100+'%';
-      s.style.top=Math.random()*100+'%';
-      s.style.animationDelay=(Math.random()*5)+'s';
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.animationDelay = (Math.random() * 5) + 's';
       container.appendChild(s);
     }
   }
